@@ -1,0 +1,13 @@
+.headerContainer {
+  border: 1px solid red;
+
+  height: 5rem;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    max-width: 1120px;
+    margin: auto;
+  }
+}
