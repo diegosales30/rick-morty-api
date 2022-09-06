@@ -1,4 +1,8 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/index";
 
 type Character = {
   results: [
@@ -13,6 +17,8 @@ type Character = {
   ];
 };
 
+//const { count } = useSelector((state: RootState) => state.nextpage);
+
 const characterApi = createApi({
   reducerPath: "character",
   baseQuery: fetchBaseQuery({
@@ -20,7 +26,7 @@ const characterApi = createApi({
   }),
   endpoints: (builder) => ({
     getCharacter: builder.query<Character, void>({
-      query: () => "/character/",
+      query: () => `/character/?page=${1}`,
     }),
   }),
 });
