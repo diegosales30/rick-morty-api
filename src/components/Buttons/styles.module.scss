@@ -1,0 +1,12 @@
+.containerButtons {
+  max-width: 1120px;
+  height: 5rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  button {
+    height: 2rem;
+    margin-left: 50px;
+    align-self: center;
+  }
+}

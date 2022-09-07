@@ -15,7 +15,7 @@
   }
 
   li {
-    background-color: rgba(175, 31, 21, 0.432);
+    background-color: #db4939cb;
     width: 250px;
     padding: 15px;
     display: flex;
@@ -27,12 +27,17 @@
 
     h2 {
       font-size: 0.9rem;
-
+      color: aliceblue;
       display: -webkit-box;
       -webkit-line-clamp: 1; /** número de linhas que você quer exibir */
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    p {
+      width: 100%;
+      font-weight: 600;
+      color: aliceblue;
     }
   }
 }
@@ -45,7 +50,7 @@
   }
 
   li {
-    background-color: rgba(6, 141, 6, 0.5);
+    background-color: #00bb2ccb;
     width: 250px;
     padding: 15px;
     display: flex;
@@ -57,12 +62,17 @@
 
     h2 {
       font-size: 0.9rem;
-
+      color: aliceblue;
       display: -webkit-box;
       -webkit-line-clamp: 1; /** número de linhas que você quer exibir */
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    p {
+      width: 100%;
+      font-weight: 600;
+      color: aliceblue;
     }
   }
 }
