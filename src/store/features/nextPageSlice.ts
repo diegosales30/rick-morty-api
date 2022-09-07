@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
   count: 1,
@@ -10,13 +10,11 @@ const nextPage = createSlice({
   reducers: {
     increment: (state) => {
       state.count += 1;
-      //console.log(state.count);
     },
 
     decrement: (state) => {
       if (state.count > 1) {
         state.count -= 1;
-        //console.log(state.count);
       }
     },
   },

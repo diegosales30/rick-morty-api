@@ -13,14 +13,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 
 const Home: NextPage = () => {
-  const { data, isLoading } = characterApi.useGetCharacterQuery();
+  const { count } = useSelector((state: RootState) => state.nextpage);
+  const { data, isLoading } = characterApi.useGetCharacterQuery(count);
   const character = data?.results;
 
-  const { count } = useSelector((state: RootState) => state.nextpage);
   console.log("teste " + count);
 
   const dispatch = useDispatch();
-  useEffect(() => {}, []);
 
   function next() {
     dispatch(increment());
