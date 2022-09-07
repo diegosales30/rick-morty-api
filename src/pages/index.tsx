@@ -1,23 +1,18 @@
-/* eslint-disable @next/next/no-img-element */
+import characterApi from "../store/features/characterSlice";
 
 import type { NextPage } from "next";
 
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import CharacterList from "../components/CharacterList";
 
 import Header from "../components/Header";
-import characterApi from "../store/features/characterSlice";
-import { increment, decrement } from "../store/features/nextPageSlice";
 
-import { useSelector } from "react-redux";
+import { increment, decrement } from "../store/features/nextPageSlice";
 import { RootState } from "../store";
 
 const Home: NextPage = () => {
   const { count } = useSelector((state: RootState) => state.nextpage);
-  const { data, isLoading } = characterApi.useGetCharacterQuery(count);
-  const character = data?.results;
-
-  console.log("teste " + count);
+  const { isLoading } = characterApi.useGetCharacterQuery(count);
 
   const dispatch = useDispatch();
 
@@ -31,19 +26,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Header />
-      {isLoading ? (
-        <h1>Loading</h1>
-      ) : (
-        character?.map((item) => (
-          <ul key={item.id}>
-            <h2>{item.name}</h2>
-            <img src={item.image} alt="#" />
-            <p>{item.species}</p>
-            <p>{item.status}</p>
-            <p>{item.gender}</p>
-          </ul>
-        ))
-      )}
+      {isLoading ? <h1>Loading</h1> : <CharacterList />}
 
       <button onClick={prev}>prev</button>
       <button onClick={next}>next</button>
