@@ -14,8 +14,10 @@ const Home: NextPage = () => {
   const { count } = useSelector((state: RootState) => state.nextpage);
   const { isLoading } = characterApi.useGetCharacterQuery(count);
 
+  const { css } = useSelector((state: RootState) => state.darkmode);
+
   return (
-    <div>
+    <div style={{ background: `${css}` }}>
       <Header />
       {isLoading ? <h1>Loading</h1> : <CharacterList />}
       <Buttons />
